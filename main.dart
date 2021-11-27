@@ -4,14 +4,14 @@ import 'dart:math';
 void main() {
   runApp(
     MaterialApp(
-      theme: new ThemeData(
+      theme: ThemeData(
         splashColor: Colors.transparent,
         focusColor: Colors.transparent,
       ),
       debugShowCheckedModeBanner: false,
       title: "Make Decision",
-      home: Scaffold(
-      // backgroundColor: Color(0xFFd7d7d7),
+      home: const Scaffold(
+         backgroundColor: Color(0xFFd7d7d7),
         body: MyApp(),
       ),
     ),
@@ -30,15 +30,15 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Center(
-        child: RaisedButton(
-          highlightColor: Colors.transparent,
-          child: Image.asset('images/ball$num.png',),
-          onPressed: (){
-            setState(() {
-              num=Random().nextInt(8)+1;
-            },);
-          },
-        ),
-   );
+      child: RawMaterialButton(
+        highlightColor: Colors.transparent,
+        child: Image.asset('images/ball$num.png',),
+        onPressed: (){
+          setState(() {
+            num=Random().nextInt(8)+1;
+          },);
+        },
+      ),
+    );
   }
 }
